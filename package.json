@@ -1,8 +1,8 @@
 {
   "name": "ihaiu-jsfile",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "nodejs文件操作",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
     "test": "node index.js -h",
     "start": "node index.js -h"
@@ -29,6 +29,6 @@
     "@types/node": "^13.9.0"
   },
   "bin": {
-    "ihaiu-jsfile": "index.js"
+    "ihaiu-jsfile": "bin/index.js"
   }
 }
