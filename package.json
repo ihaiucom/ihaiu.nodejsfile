@@ -1,6 +1,6 @@
 {
   "name": "ihaiu-jsfile",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nodejs文件操作",
   "main": "index.js",
   "scripts": {
