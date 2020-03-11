@@ -6,33 +6,33 @@ nodejs 文件操作
 * 拷贝文件或目录
 
 ```
-node index.js -C copy -s ./ -t ./aa/bb/cc     
+zffile -C copy -s ./ -t ./aa/bb/cc     
 
 ``` 
 
 * 创建文件夹
 
 ```
-node index.js -C mkdir -s ./aa/bb/cc/dd   
+zffile -C mkdir -s ./aa/bb/cc/dd   
 ``` 
 
 * 删除文件或者目录
 
 ```
-node index.js -C delete -s ./aa/bb/cc/dd
+zffile -C delete -s ./aa/bb/cc/dd
 ```
 
 
 * 文件写入
 
 ```
-node index.js -C write -s ./aaa/bb/a.txt -b "Hello World中午2" -f w  -e utf8
+zffile -C write -s ./aaa/bb/a.txt -b "Hello World中午2" -f w  -e utf8
 ```
 
 * 文件读取
 
 ```
-node index.js -C read -s ./aaa/bb/a.txt
+zffile -C read -s ./aaa/bb/a.txt
 ```
 
 
@@ -40,7 +40,7 @@ node index.js -C read -s ./aaa/bb/a.txt
 * 文件重命名或者移动文件
 
 ```
-node index.js -C rename -s ./aa/cc/a.txt -d ./aa/cc/b.txt -o true
+zffile -C rename -s ./aa/cc/a.txt -d ./aa/cc/b.txt -o true
 ```
 
 

@@ -257,7 +257,7 @@ var CmdType =
 
 
 // 程序参数
-program.version('1.0.5');
+program.version('1.0.8');
 
 program
     .option('-C, --cmd <lang>', '命令名称: copy、delete、 mkdir、write、 read、 rename')
@@ -445,11 +445,11 @@ switch(cmdType)
 
 function printHelp()
 {
-    console.log('node index.js -C copy -s ./ -t ./aa/bb/cc      ');
-    console.log('node index.js -C mkdir -s ./aa/bb/cc/dd    ');
-    console.log('node index.js -C delete -s ./aa/bb/cc/dd    ');
-    console.log('node index.js -C write -s ./aaa/bb/a.txt -b "Hello World中午2" -f w  -e utf8');
-    console.log("node index.js -C read -s ./aaa/bb/a.txt ");
-    console.log("node index.js -C rename -s ./aa/cc/a.txt -d ./aa/cc/b.txt -o true");
+    console.log('zffile -C copy -s ./ -t ./aa/bb/cc      ');
+    console.log('zffile -C mkdir -s ./aa/bb/cc/dd    ');
+    console.log('zffile -C delete -s ./aa/bb/cc/dd    ');
+    console.log('zffile -C write -s ./aaa/bb/a.txt -b "Hello World中午2" -f w  -e utf8');
+    console.log("zffile -C read -s ./aaa/bb/a.txt ");
+    console.log("zffile -C rename -s ./aa/cc/a.txt -d ./aa/cc/b.txt -o true");
     program.help();
 }

@@ -1,6 +1,6 @@
 {
-  "name": "ihaiu-jsfile",
-  "version": "1.0.5",
+  "name": "zffile",
+  "version": "1.0.8",
   "description": "nodejs文件操作",
   "main": "bin/index.js",
   "scripts": {
@@ -29,6 +29,6 @@
     "@types/node": "^13.9.0"
   },
   "bin": {
-    "ihaiu-jsfile": "bin/index.js"
+    "zffile": "bin/index.js"
   }
 }
