@@ -10,16 +10,30 @@ zffile -C copy -s ./ -t ./aa/bb/cc
 
 ``` 
 
+```
+zffile copy ./ ./aa/bb/cc
+```
+
+
 * 创建文件夹
 
 ```
 zffile -C mkdir -s ./aa/bb/cc/dd   
 ``` 
 
+```
+zffile mkdir ./aa/bb/cc
+```
+
 * 删除文件或者目录
 
 ```
 zffile -C delete -s ./aa/bb/cc/dd
+```
+
+
+```
+zffile delete ./aa/
 ```
 
 
@@ -29,12 +43,21 @@ zffile -C delete -s ./aa/bb/cc/dd
 zffile -C write -s ./aaa/bb/a.txt -b "Hello World中午2" -f w  -e utf8
 ```
 
+
+```
+zffile write ./aa/bb/cc/a.txt "Hello"
+```
+
+
 * 文件读取
 
 ```
 zffile -C read -s ./aaa/bb/a.txt
 ```
 
+```
+zffile read ./aa/bb/cc/a.txt
+```
 
 
 * 文件重命名或者移动文件
@@ -42,6 +65,13 @@ zffile -C read -s ./aaa/bb/a.txt
 ```
 zffile -C rename -s ./aa/cc/a.txt -d ./aa/cc/b.txt -o true
 ```
+
+```
+zffile rename ./aa/bb/cc/a.txt ./aa/b.txt
+```
+
+
+
 
 
 ```
@@ -100,6 +130,13 @@ cnpm install @types/node --save-dev
 ```
 cnpm install commander --save
 ```
+
+### 添加命令
+* 配置
+
+#!/usr/bin/env node
+
+'use strict'
 
 ### 创建TypeScript项目
 * tsc -init

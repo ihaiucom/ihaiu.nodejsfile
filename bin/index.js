@@ -257,17 +257,17 @@ var CmdType =
 
 
 // 程序参数
-program.version('1.0.8');
+program.version('1.0.9');
 
 program
     .option('-C, --cmd <lang>', '命令名称: copy、delete、 mkdir、write、 read、 rename')
     .option('-s, --srcpath <path>', '路径')
     .option('-d, --destpath [path]', '拷贝文件目标路径')
     .option('-o, --over [boolean]', '是否覆盖')
-    .option('-i, --ignorehide', '是否忽略隐藏文件')
-    .option('-b, --body [lang]', '写入文件的内容')
-    .option('-f, --flag [lang]', '写入文件的flag, w, http://nodejs.cn/api/fs.html#fs_file_system_flags')
-    .option('-e, --encoding  [lang]', '默认值: utf8');
+    .option('-i, --ignorehide [boolean]', '是否忽略隐藏文件')
+    .option('-b, --body [string]', '写入文件的内容')
+    .option('-f, --flag [string]', '写入文件的flag, w, http://nodejs.cn/api/fs.html#fs_file_system_flags')
+    .option('-e, --encoding  [string]', '默认值: utf8');
      
 
 program.parse(process.argv);
@@ -288,6 +288,48 @@ var flag = "w";
 var encoding = "utf8";
 var over = true;
 var ignorehide = true;
+
+
+if(process.argv.length > 2)
+{
+    if(!process.argv[2].startsWith("-"))
+    {
+        if(CmdType[process.argv[2]])
+        {
+            cmdType = CmdType[process.argv[2]];
+
+            if(process.argv.length > 3)
+            {
+                if(!process.argv[3].startsWith("-"))
+                {
+                    srcPath = process.argv[3];
+                }
+
+                
+                if(process.argv.length > 4)
+                {
+                    if(!process.argv[4].startsWith("-"))
+                    {
+                        destPath = process.argv[4];
+                    }
+                }
+            }
+
+            if(cmdType == CmdType.write)
+            {
+                if(process.argv.length > 4)
+                {
+                    if(!process.argv[4].startsWith("-"))
+                    {
+                        body = process.argv[4];
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
 
 if(program.cmd)
 {
@@ -451,5 +493,13 @@ function printHelp()
     console.log('zffile -C write -s ./aaa/bb/a.txt -b "Hello World中午2" -f w  -e utf8');
     console.log("zffile -C read -s ./aaa/bb/a.txt ");
     console.log("zffile -C rename -s ./aa/cc/a.txt -d ./aa/cc/b.txt -o true");
+
+    console.log('');
+    console.log('zffile copy ./ ./aa/bb/cc      ');
+    console.log('zffile delete ./aa/      ');
+    console.log('zffile mkdir ./aa/bb/cc      ');
+    console.log('zffile write ./aa/bb/cc/a.txt "Hello"     ');
+    console.log('zffile read ./aa/bb/cc/a.txt  ');
+    console.log('zffile rename ./aa/bb/cc/a.txt ./aa/b.txt ');
     program.help();
 }
