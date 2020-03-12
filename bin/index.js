@@ -257,7 +257,7 @@ var CmdType =
 
 
 // 程序参数
-program.version('1.0.9');
+program.version('1.0.10');
 
 program
     .option('-C, --cmd <lang>', '命令名称: copy、delete、 mkdir、write、 read、 rename')

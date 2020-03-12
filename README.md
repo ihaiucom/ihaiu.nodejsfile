@@ -2,6 +2,19 @@
 # ihaiu.nodejsfile
 nodejs 文件操作
 
+## 安装
+
+```
+cnpm install zffile -g   
+``` 
+
+或者
+
+```
+npm install zffile -g   
+``` 
+
+## 命令介绍
 
 * 拷贝文件或目录
 

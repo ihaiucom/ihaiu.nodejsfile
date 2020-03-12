@@ -1,6 +1,6 @@
 {
   "name": "zffile",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "nodejs文件操作",
   "main": "bin/index.js",
   "scripts": {
